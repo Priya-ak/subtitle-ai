@@ -1,80 +1,213 @@
-# Subtitle AI
+# 🎬 Subtitle AI
 
-Minimal scaffold for Subtitle AI — an offline-capable subtitle, translation, and TTS app.
+### 🚀 AI-Powered Subtitles • Translation • Media Intelligence
 
-Quickstart
+<p align="center">
+  <img src="https://img.shields.io/badge/AI-Subtitle%20Engine-ff416c?style=for-the-badge&logo=ai&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Streamlit-Frontend-ff4b2b?style=for-the-badge&logo=streamlit&logoColor=white"/>
+  <img src="https://img.shields.io/badge/FastAPI-Backend-7c3aed?style=for-the-badge&logo=fastapi&logoColor=white"/>
+</p>
 
-- Backend (FastAPI):
+---
 
-  ```bash
-  cd backend
-  python -m venv .venv
-  .venv\Scripts\activate    # Windows
-  pip install -r requirements.txt
-  uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
-  ```
+## 🌟 ✨ Project Overview
 
-- Frontend (Vite + React + Tailwind):
+**Subtitle AI** is a **next-generation AI tool** designed to convert **audio & video into subtitles**, translate them instantly, and deliver a **cinematic user experience** 🎬
 
-  ```bash
-  cd frontend
-  npm install
-  npm run dev
-  ```
+🔥 Built with real-world production concepts
+🔥 Designed with Netflix-style UI
+🔥 Ready for deployment
 
-Notes
-- Backend contains API endpoint stubs and model integration hooks in `backend/app`.
-- Frontend is a lightweight three-panel UI scaffold in `frontend/src`.
-- This repo intentionally provides local hooks for Whisper, MarianMT and Coqui TTS — you will need to download models locally to run fully offline.
+---
 
-API Endpoints (scaffolded)
+## 🎯 🚀 Features
 
-- `POST /api/transcribe/voice` — voice file upload -> transcription, translation, subtitles
-- `POST /api/translate/text` — text translation
-- `POST /api/transcribe/file` — file upload -> subtitles + SRT (base64)
-- `POST /api/tts` — text-to-speech -> base64 audio
-- `POST /api/detect` — language detection
-- `POST /api/speaker` — speaker diarization
+### 🎧 Audio / Video Subtitle Generator
 
-Testing endpoints (curl)
+✔ Upload MP3 / WAV / MP4
+✔ AI Speech Recognition
+✔ Real-time subtitle sync
+✔ Smooth playback experience
 
-- Translate text:
+---
 
-```bash
-curl -X POST "http://localhost:8000/api/translate/text" -H "Content-Type: application/json" -d '{"text":"Hello, how are you?","targetLanguage":"hi"}'
+### 🌐 Smart Text Translator
+
+✔ Auto language detection
+✔ Translate to any language
+✔ Fast & accurate output
+✔ Clean UI display
+
+---
+
+### 🎬 Netflix-Style Subtitles
+
+✔ Dark cinematic subtitle box
+✔ Glow + shadow effects
+✔ Real-time sync with media
+✔ Premium UI experience
+
+---
+
+### 📥 Export Options
+
+✔ Download `.srt` subtitles
+✔ 🎬 Burn subtitles into video (FFmpeg)
+✔ Ready-to-share final video
+
+---
+
+## 🖥️ 🎨 UI Experience
+
+✨ Glassmorphism cards
+✨ Gradient neon glow
+✨ Sidebar navigation (Pro UI)
+✨ Smooth buttons & hover effects
+
+👉 Looks like a **real SaaS product**
+
+---
+
+## 🏗️ ⚙️ Tech Stack
+
+| Layer               | Technology     |
+| ------------------- | -------------- |
+| 🎨 Frontend         | Streamlit      |
+| ⚙️ Backend          | FastAPI        |
+| 🧠 AI Model         | Whisper / Vosk |
+| 🌍 Translation      | Custom API     |
+| 🎬 Video Processing | FFmpeg         |
+
+---
+
+## 📁 📦 Project Structure
+
+```
+subtitle-ai/
+│
+├── backend/
+│   ├── main.py
+│   ├── utils.py
+│   ├── srt_utils.py
+│   └── requirements.txt
+│
+├── app.py
+├── README.md
+└── .gitignore
 ```
 
-- TTS:
+---
+
+## ⚙️ 🔧 Installation
+
+### 🔹 Clone Repository
 
 ```bash
-curl -X POST "http://localhost:8000/api/tts" -H "Content-Type: application/json" -d '{"text":"नमस्ते","language":"hi","voice":"female"}'
+git clone https://github.com/Priya-ak/subtitle-ai.git
+cd subtitle-ai
 ```
 
-- Upload audio file (multipart form):
+---
+
+### 🔹 Backend Setup
 
 ```bash
-curl -X POST "http://localhost:8000/api/transcribe/file?targetLanguage=en" -F "file=@/path/to/audio.mp3"
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload --port 7777
 ```
 
-You can also use `backend/test_client.py` to run quick checks (requires `requests`).
+---
 
-Docker / Electron (offline packaging)
-
-- Docker Compose (build backend + frontend):
+### 🔹 Frontend Setup
 
 ```bash
-docker-compose build
-docker-compose up
+cd ..
+pip install streamlit
+streamlit run app.py
 ```
 
-Place model folders under `backend/models` and set `VOSK_MODEL_PATH` accordingly (docker-compose mounts `./backend/models` to `/app/models`).
+---
 
-- Electron (desktop wrapper, dev):
+## 🔗 🔥 API Configuration
+
+Before deployment:
+
+```python
+API_URL = "http://127.0.0.1:7777/api/subtitles"
+```
+
+After deployment:
+
+```python
+API_URL = "https://your-backend-url/api/subtitles"
+```
+
+---
+
+## 🎬 🚀 Export Video with Subtitles
 
 ```bash
-cd electron
-npm install
-npm start
+ffmpeg -i input.mp4 -vf subtitles=output.srt output.mp4
 ```
 
-This will spawn a local backend (via `uvicorn`) and open the frontend at `http://localhost:5173`. For a production build, build the frontend and point Electron to the static files.
+---
+
+## 🌍 🚀 Deployment
+
+### 🎨 Frontend
+
+* Streamlit Cloud
+* Render
+
+### ⚙️ Backend
+
+* Render
+* Railway
+* AWS
+
+---
+
+## ⚠️ ❗ Important Notes
+
+🚫 Do NOT upload heavy files (>100MB)
+
+Add this in `.gitignore`:
+
+```
+backend/models/
+*.mp4
+*.srt
+```
+
+---
+
+## 💡 🔮 Future Improvements
+
+🚀 Live subtitle streaming
+🌍 Multi-language real-time captions
+🎙️ Voice cloning
+📱 Mobile app version
+
+---
+
+## 👩‍💻 💼 Author
+
+**Priyadharshini**
+
+🚀 AI Developer
+💡 Building real-world AI products
+
+---
+
+## ⭐ 💖 Support
+
+If you like this project:
+
+⭐ Star the repo
+📢 Share with others
+🚀 Build amazing things
+
+---
+
+
