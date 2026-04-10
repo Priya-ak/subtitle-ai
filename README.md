@@ -168,20 +168,6 @@ ffmpeg -i input.mp4 -vf subtitles=output.srt output.mp4
 
 ---
 
-## ⚠️ ❗ Important Notes
-
-🚫 Do NOT upload heavy files (>100MB)
-
-Add this in `.gitignore`:
-
-```
-backend/models/
-*.mp4
-*.srt
-```
-
----
-
 ## 💡 🔮 Future Improvements
 
 🚀 Live subtitle streaming
