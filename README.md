@@ -1,199 +1,164 @@
-# 🎬 Subtitle AI
-
-### 🚀 AI-Powered Subtitles • Translation • Media Intelligence
+<p align="center">
+  <h1>🎬 Subtitle AI</h1>
+  <h3>✨ Turn Audio & Video into Smart Subtitles with AI</h3>
+</p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/AI-Subtitle%20Engine-ff416c?style=for-the-badge&logo=ai&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Streamlit-Frontend-ff4b2b?style=for-the-badge&logo=streamlit&logoColor=white"/>
-  <img src="https://img.shields.io/badge/FastAPI-Backend-7c3aed?style=for-the-badge&logo=fastapi&logoColor=white"/>
+  <img src="https://img.shields.io/badge/AI-Powered-purple?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/FastAPI-Backend-green?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Streamlit-Frontend-red?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Open%20Source-Love-orange?style=for-the-badge"/>
+</p>
+
+<p align="center">
+  🎧 Upload → 🧠 Process → 🌍 Translate → 🔊 Speak
 </p>
 
 ---
 
-## 🌟 ✨ Project Overview
+## 🌟 What is Subtitle AI?
 
-**Subtitle AI** is a **next-generation AI tool** designed to convert **audio & video into subtitles**, translate them instantly, and deliver a **cinematic user experience** 🎬
+**Subtitle AI** is a smart AI-powered system that transforms your **audio & video into subtitles**, translates them into different languages, and converts text into speech — all through a clean and simple interface.
 
-🔥 Built with real-world production concepts
-🔥 Designed with Netflix-style UI
-🔥 Ready for deployment
+💡 Designed to feel like a **Netflix-style subtitle engine** powered by real AI.
 
 ---
 
-## 🎯 🚀 Features
+## 🎥 Live Experience (UI)
 
-### 🎧 Audio / Video Subtitle Generator
-
-✔ Upload MP3 / WAV / MP4
-✔ AI Speech Recognition
-✔ Real-time subtitle sync
-✔ Smooth playback experience
+- 📂 Clean navigation sidebar  
+- 🎧 Upload audio/video  
+- 🌍 Select target language  
+- 🔤 Text translator  
 
 ---
 
-### 🌐 Smart Text Translator
+## ⚡ Core Features
 
-✔ Auto language detection
-✔ Translate to any language
-✔ Fast & accurate output
-✔ Clean UI display
-
----
-
-### 🎬 Netflix-Style Subtitles
-
-✔ Dark cinematic subtitle box
-✔ Glow + shadow effects
-✔ Real-time sync with media
-✔ Premium UI experience
+### 🎧 Smart Subtitle Generator
+- Upload `.mp3`, `.wav`, `.mp4`
+- Converts speech → text using AI
+- Generates structured subtitles  
 
 ---
 
-### 📥 Export Options
-
-✔ Download `.srt` subtitles
-✔ 🎬 Burn subtitles into video (FFmpeg)
-✔ Ready-to-share final video
-
----
-
-## 🖥️ 🎨 UI Experience
-
-✨ Glassmorphism cards
-✨ Gradient neon glow
-✨ Sidebar navigation (Pro UI)
-✨ Smooth buttons & hover effects
-
-👉 Looks like a **real SaaS product**
+### 🌍 Multi-Language Translation
+- Translate subtitles instantly  
+- Supports multiple languages  
+- Auto language detection  
 
 ---
 
-## 🏗️ ⚙️ Tech Stack
-
-| Layer               | Technology     |
-| ------------------- | -------------- |
-| 🎨 Frontend         | Streamlit      |
-| ⚙️ Backend          | FastAPI        |
-| 🧠 AI Model         | Whisper / Vosk |
-| 🌍 Translation      | Custom API     |
-| 🎬 Video Processing | FFmpeg         |
+### 🔊 Text-to-Speech (TTS)
+- Convert translated text → audio  
+- Download generated speech  
 
 ---
 
-## 📁 📦 Project Structure
+### 🧠 Intelligent Processing
+- Clean formatting  
+- Accurate timestamps  
+- Fast response  
 
-```
+---
+
+## 🧱 Tech Stack
+
+| 🚀 Layer       | 💻 Technology        |
+|--------------|--------------------|
+| Frontend     | Streamlit           |
+| Backend      | FastAPI             |
+| AI Models    | Whisper / Vosk      |
+| Translation  | deep-translator     |
+| TTS          | gTTS                |
+| Processing   | FFmpeg              |
+
+---
+
+## 📁 Project Structure
+
+<p align="center">
+<pre>
 subtitle-ai/
-│
+
 ├── backend/
-│   ├── main.py
-│   ├── utils.py
-│   ├── srt_utils.py
-│   └── requirements.txt
+│   ├── app/
+│   │   ├── utils.py
+│   │   ├── tts_utils.py
+│   │   ├── srt_utils.py
+│   │
+│   ├── generated_audio/  🚫 (ignored)
+│   ├── models/
 │
-├── app.py
-├── README.md
-└── .gitignore
-```
+├── app.py               ⚡ FastAPI Backend
+├── requirements.txt
+├── .env
+├── test_client.py
+└── README.md
+</pre>
+</p>
 
 ---
 
-## ⚙️ 🔧 Installation
+## ⚙️ Setup Guide
 
-### 🔹 Clone Repository
-
+### 1️⃣ Clone Repository
 ```bash
 git clone https://github.com/Priya-ak/subtitle-ai.git
 cd subtitle-ai
 ```
-
----
-
-### 🔹 Backend Setup
-
-```bash
-cd backend
+### 2️⃣ Install Dependencies
+```
 pip install -r requirements.txt
-uvicorn main:app --reload --port 7777
+```
+### 3️⃣ Run Backend
+```
+uvicorn app:app --reload --port 8000
 ```
 
----
-
-### 🔹 Frontend Setup
-
-```bash
-cd ..
-pip install streamlit
+### 4️⃣ Run Frontend
+```
 streamlit run app.py
 ```
+## 🔌 API Endpoints
+
+| Endpoint       | Purpose              |
+|---------------|----------------------|
+| `/transcribe` | Generate subtitles   |
+| `/translate`  | Translate text       |
+| `/tts`        | Text → Speech        |
 
 ---
 
-## 🔗 🔥 API Configuration
+## 🎯 Workflow
+Upload File → Speech Recognition → Subtitle Generation → Translation → Audio Output
+---
 
-Before deployment:
+## 🎥 Supported Formats
 
-```python
-API_URL = "http://127.0.0.1:7777/api/subtitles"
-```
-
-After deployment:
-
-```python
-API_URL = "https://your-backend-url/api/subtitles"
-```
+🎧 Audio: `.mp3`, `.wav`  
+🎬 Video: `.mp4`, `.mpeg`  
 
 ---
 
-## 🎬 🚀 Export Video with Subtitles
+## 🔮 Future Improvements
 
-```bash
-ffmpeg -i input.mp4 -vf subtitles=output.srt output.mp4
-```
-
----
-
-## 🌍 🚀 Deployment
-
-### 🎨 Frontend
-
-* Streamlit Cloud
-* Render
-
-### ⚙️ Backend
-
-* Render
-* Railway
-* AWS
+- ✨ Real-time subtitles  
+- 🌐 Multi-language UI  
+- 📱 Mobile support  
+- 🎙️ Voice cloning  
 
 ---
 
-## 💡 🔮 Future Improvements
+## 👩‍💻 Author
 
-🚀 Live subtitle streaming
-🌍 Multi-language real-time captions
-🎙️ Voice cloning
-📱 Mobile app version
+**Priyadharshini**  
+🚀 AI Developer  
 
 ---
 
-## 👩‍💻 💼 Author
+## 💖 Support
 
-**Priyadharshini**
-
-🚀 AI Developer
-💡 Building real-world AI products
-
----
-
-## ⭐ 💖 Support
-
-If you like this project:
-
-⭐ Star the repo
-📢 Share with others
-🚀 Build amazing things
-
----
-
-
+- ⭐ Star this repo  
+- 🔁 Share it  
+- 🤝 Contribute  
